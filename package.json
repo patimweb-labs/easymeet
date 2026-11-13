@@ -1,66 +1,66 @@
 {
-	"name": "easymeet",
-	"private": true,
-	"version": "0.1.0",
-	"description": "Browser video conferencing – mediasoup SFU, chat, file sharing, screen share, virtual backgrounds",
-	"author": "Patrick Weppelmann",
-	"license": "Apache-2.0",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Smotherer007/easymeet.git"
-	},
-	"homepage": "https://easymeet.easyroomtools.tech/",
-	"bugs": {
-		"url": "https://github.com/Smotherer007/easymeet/issues"
-	},
-	"keywords": [
-		"video-conference",
-		"webrtc",
-		"mediasoup",
-		"sfu",
-		"screen-sharing",
-		"chat",
-		"virtual-backgrounds",
-		"videocall",
-		"meeting"
-	],
-	"type": "module",
-	"workspaces": [
-		"client",
-		"server"
-	],
-	"overrides": {
-		"path-to-regexp": "0.1.13",
-		"picomatch": "4.0.4"
-	},
-	"engines": {
-		"node": ">=26"
-	},
-	"scripts": {
-		"dev": "npm run dev -w easymeet-client",
-		"server": "npm run start -w easymeet-server",
-		"dev:all": "concurrently \"npm run server\" \"npm run dev\"",
-		"rebuild:mediasoup": "npm rebuild mediasoup -w easymeet-server",
-		"build": "npm run build -w easymeet-client",
-		"preview": "npm run preview -w easymeet-client",
-		"test": "node --test 'server/tests/*.test.ts' 'client/tests/*.test.ts'",
-		"pretty": "prettier --write \"**/*.{js,ts,json,xml,html,css,scss,md,yaml,yml,sh}\"",
-		"pretty:check": "prettier --check \"**/*.{js,ts,json,xml,html,css,scss,md,yaml,yml,sh}\"",
-		"docker:build": "docker build --no-cache --platform linux/amd64 -t smotherer/easymeet:latest .",
-		"docker:push": "docker push smotherer/easymeet:latest",
-		"docker:build:and:push": "npm run docker:build && npm run docker:push",
-		"docker:up": "docker compose up -d"
-	},
-	"devDependencies": {
-		"@prettier/plugin-xml": "^3.4.2",
-		"concurrently": "^9.2.1",
-		"prettier": "^3.8.1",
-		"prettier-plugin-sh": "^0.18.0"
-	},
-	"allowScripts": {
-		"mediasoup@3.19.18": true,
-		"bufferutil@4.1.0": true,
-		"utf-8-validate@5.0.10": true,
-		"es5-ext": false
-	}
+  "name": "easymeet",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Browser video conferencing – mediasoup SFU, chat, file sharing, screen share, virtual backgrounds",
+  "author": "Patrick Weppelmann",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patimweb-labs/easymeet.git"
+  },
+  "homepage": "https://easymeet.easyroomtools.tech/",
+  "bugs": {
+    "url": "https://github.com/patimweb-labs/easymeet/issues"
+  },
+  "keywords": [
+    "video-conference",
+    "webrtc",
+    "mediasoup",
+    "sfu",
+    "screen-sharing",
+    "chat",
+    "virtual-backgrounds",
+    "videocall",
+    "meeting"
+  ],
+  "type": "module",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "overrides": {
+    "path-to-regexp": "0.1.13",
+    "picomatch": "4.0.4"
+  },
+  "engines": {
+    "node": ">=26"
+  },
+  "scripts": {
+    "dev": "npm run dev -w easymeet-client",
+    "server": "npm run start -w easymeet-server",
+    "dev:all": "concurrently \"npm run server\" \"npm run dev\"",
+    "rebuild:mediasoup": "npm rebuild mediasoup -w easymeet-server",
+    "build": "npm run build -w easymeet-client",
+    "preview": "npm run preview -w easymeet-client",
+    "test": "node --test 'server/tests/*.test.ts' 'client/tests/*.test.ts'",
+    "pretty": "prettier --write \"**/*.{js,ts,json,xml,html,css,scss,md,yaml,yml,sh}\"",
+    "pretty:check": "prettier --check \"**/*.{js,ts,json,xml,html,css,scss,md,yaml,yml,sh}\"",
+    "docker:build": "docker build --no-cache --platform linux/amd64 -t smotherer/easymeet:latest .",
+    "docker:push": "docker push smotherer/easymeet:latest",
+    "docker:build:and:push": "npm run docker:build && npm run docker:push",
+    "docker:up": "docker compose up -d"
+  },
+  "devDependencies": {
+    "@prettier/plugin-xml": "^3.4.2",
+    "concurrently": "^9.2.1",
+    "prettier": "^3.8.1",
+    "prettier-plugin-sh": "^0.18.0"
+  },
+  "allowScripts": {
+    "mediasoup@3.19.18": true,
+    "bufferutil@4.1.0": true,
+    "utf-8-validate@5.0.10": true,
+    "es5-ext": false
+  }
 }
